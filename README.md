@@ -14,15 +14,12 @@ Rock Canyon Design is a company that my mom recently started to sell custom hand
 
 ## 🚀 Specification Deliverable
 
-> [!NOTE]
->  Fill in this sections as the submission artifact for this deliverable. You can refer to this [example](https://github.com/webprogramming260/startup-example/blob/main/README.md) for inspiration.
-
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] Proper use of Markdown
-- [ ] A concise and compelling elevator pitch
-- [ ] Description of key features
-- [ ] Description of how you will use each technology
+- [x] Proper use of Markdown
+- [x] A concise and compelling elevator pitch
+- [x] Description of key features
+- [x] Description of how you will use each technology
 - [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
@@ -33,7 +30,7 @@ Have you ever wanted a custom engraved wooden or acrylic keepsake or gift? Throu
 
 ![Design image](placeholder.png)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 ```mermaid
 sequenceDiagram
@@ -44,20 +41,27 @@ sequenceDiagram
 
 ### Key features
 
-- Describe your key feature
-- Describe your key feature
-- Describe your key feature
+- Home page that displays videos and pictures
+- Account system with secure login with HTTPS
+- Ability to browse products, add products to cart
+- Ability to personlize certain products with custom text or images
+- Cart, order, and purchase capablities
+- Order history persistently stored
+- Ability for admin to start live chat with customers
 
 ### Technologies
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+- **HTML** - Uses correct HTML structure for the application. Several HTML pages. Hyperlink to send email to admin.
+- **CSS** - Application styling to work on desktop screens as well as mobile devices, good usage of whitespace, color, and contrast.
+- **React** - Provides login, fetches product data, handle state changes like adding something to the cart, or opening the Admin-customer live chat.
+- **Service** - Backend service with endpoints for:
+      -login
+      -cart and order price calculations
+      -calculations to apply discounts
+- **DB/Login** - Customers can create accounts and log in to purchase items or view their order history. These details will be stored in the database.
+- **WebSocket** - Facilitate a live chat between Admin users and customers.
 
 ## 🚀 AWS deliverable
 
