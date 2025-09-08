@@ -29,7 +29,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 ### Elevator pitch
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Have you ever wanted a custom engraved wooden or acrylic keepsake or gift? Through the Rocky Mountain Design Storefront you can browse a wide range of popular designs or customize a pattern to make the perfect, personalized, laser-cut keepsake and order it directly on the site. Within minutes of your order, your cut-to-order design can be in our laser cutter, turning your idea into a reality. Then it's just a short trip from our front porch to yours! With the Rocky Mountain Design Storefront, an unforgettable anniversity, Christmas, birthday, wedding gift or personalized keepsake is just a click away.
 
 ### Design
 
