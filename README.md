@@ -3,16 +3,14 @@
 [My Notes](notes.md)
 
 Rock Canyon Design is a company that my mom recently started to sell custom handcrafted laser-cut creations. When I told her I was developing my web programming skills, she asked if I would design a website that would:
-> 1. Showcase her products through professional photos and videos.
-> 2. Provide a simple and secure way for customers to browse and purchase products.
-> 3. Allow customers to customize details in certain patterns to order individualized products.
+1. Showcase her products through professional photos and videos.
+2. Provide a simple and secure way for customers to browse and purchase products.
+3. Allow customers to customize details in certain patterns to order individualized products.
 
 
 > [!NOTE]
 >  This is a template for your startup application. You must modify this `README.md` file for each phase of your development. You only need to fill in the section for each deliverable when that deliverable is submitted in Canvas. Without completing the section for a deliverable, the TA will not know what to look for when grading your submission. Feel free to add additional information to each deliverable description, but make sure you at least have the list of rubric items and a description of what you did for each item.
 
-> [!NOTE]
->  If you are not familiar with Markdown then you should review the [documentation](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) before continuing.
 
 ## 🚀 Specification Deliverable
 
