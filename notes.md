@@ -8,6 +8,12 @@
 - [Canvas](https://byu.instructure.com)
 - [MDN](https://developer.mozilla.org)
 
+
+## Starting with GitHub
+
+I learned a lot about how git hub works and learned how to pull and push using GitHub. I'm excited to think about what I want my startup to be!
+
+
 ## AWS
 
 My IP address is: 54.81.96.130
