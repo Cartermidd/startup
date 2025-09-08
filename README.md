@@ -1,8 +1,11 @@
-# Your startup name here
+# Rock Canyon Design Storefront
 
 [My Notes](notes.md)
 
-A brief description of the application here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Rock Canyon Design is a company that my mom recently started to sell custom handcrafted laser-cut creations. When I told her I was developing my web programming skills, she asked if I would design a website that would:
+> 1. Showcase her products through professional photos and videos.
+> 2. Provide a simple and secure way for customers to browse and purchase products.
+> 3. Allow customers to customize details in certain patterns to order individualized products.
 
 
 > [!NOTE]
