@@ -28,16 +28,11 @@ Have you ever wanted a custom engraved wooden or acrylic keepsake or gift? Throu
 
 ### Design
 
-![Design image](placeholder.png)
+<img width="1814" height="1122" alt="image" src="https://github.com/user-attachments/assets/bb5ab734-a9a6-4240-bfb0-3ddd89d271c8" />
 
 
+<img width="1556" height="974" alt="image" src="https://github.com/user-attachments/assets/c8cda510-fbe6-4002-9530-53b22a6f897f" />
 
-```mermaid
-sequenceDiagram
-    actor You
-    actor Website
-    You->>Website: Replace this with your design
-```
 
 ### Key features
 
