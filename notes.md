@@ -13,6 +13,7 @@
 My IP address is: 13.223.217.168
 this is the public IP address.
 The Web Page can be accessed by the domain name: rockcanyondesign.com or any sub-directory in the format of sub.rockcanyondesign.com
+https://rockcanyondesign.com/
 
 NS record provides extra security to the domain name
 SOA record provides information about the owner of the domain name (I should adjust this because the domain name is being accessed through GoDaddy and belongs to my mom)
