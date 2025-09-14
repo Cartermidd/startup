@@ -62,7 +62,7 @@ I am going to use the required technologies in the following ways.
 
 For this deliverable I did the following. I set up the public IP address, the domain name, and the secure https connection.
 
-- [x] **Server deployed and accessible with custom domain name** - [My server link](https://rockcanyondesign.com).
+- [x] **Server deployed and accessible with custom domain name** - [Rock Canyon Design](https://rockcanyondesign.com).
 
 ## 🚀 HTML deliverable
 
