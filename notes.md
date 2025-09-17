@@ -25,7 +25,7 @@ No problems worked just like it said in the [instruction](https://github.com/web
 ## HTML
 
 [Structure](https://codepen.io/Carter-Middleton/pen/azdodxy)
-[Input](example.com)
+[Input](https://codepen.io/Carter-Middleton/pen/wBMwWLj)
 [Media](example.com)
 This was easy. I was careful to use the correct structural elements such as header, footer, main, nav, and form. The links between the three views work great using the `a` element.
 
