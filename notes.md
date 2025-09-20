@@ -36,6 +36,10 @@ The part I didn't like was the duplication of the header and footer code. This i
 
 ## CSS
 
+[Styling Example](https://codepen.io/Carter-Middleton/pen/YPwzMQN)
+
+[Web Page Example](https://codepen.io/leesjensen/pen/jOKvbrv)
+
 This took a couple hours to get it how I wanted. It was important to make it responsive and Bootstrap helped with that. It looks great on all kinds of screen sizes.
 
 Bootstrap seems a bit like magic. It styles things nicely, but is very opinionated. You either do, or you do not. There doesn't seem to be much in between.
