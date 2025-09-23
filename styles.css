@@ -1,0 +1,24 @@
+
+
+*{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+
+
+header{
+    background-color: #adade6;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 20px;
+}
+
+
+#login_n_logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid #ccc;
+}
