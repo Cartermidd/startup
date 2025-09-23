@@ -16,8 +16,13 @@ I learned a lot about how git hub works and learned how to pull and push using G
 
 ## AWS
 
-My IP address is: 54.81.96.130
-Launching my AMI I initially put it on a private subnet. Even though it had a public IP address and the security group was right, I wasn't able to connect to it.
+My IP address is: 13.223.217.168
+this is the public IP address.
+The Web Page can be accessed by the domain name: rockcanyondesign.com or any sub-directory in the format of sub.rockcanyondesign.com
+https://rockcanyondesign.com/
+
+NS record provides extra security to the domain name
+SOA record provides information about the owner of the domain name (I should adjust this because the domain name is being accessed through GoDaddy and belongs to my mom)
 
 ## Caddy
 
@@ -25,11 +30,21 @@ No problems worked just like it said in the [instruction](https://github.com/web
 
 ## HTML
 
+[Structure](https://codepen.io/Carter-Middleton/pen/azdodxy)
+
+[Input](https://codepen.io/Carter-Middleton/pen/wBMwWLj)
+
+[Media](https://codepen.io/Carter-Middleton/pen/vELBWrX)
+
 This was easy. I was careful to use the correct structural elements such as header, footer, main, nav, and form. The links between the three views work great using the `a` element.
 
 The part I didn't like was the duplication of the header and footer code. This is messy, but it will get cleaned up when I get to React.
 
 ## CSS
+
+[Styling Example](https://codepen.io/Carter-Middleton/pen/YPwzMQN)
+
+[Web Page Example](https://codepen.io/leesjensen/pen/jOKvbrv)
 
 This took a couple hours to get it how I wanted. It was important to make it responsive and Bootstrap helped with that. It looks great on all kinds of screen sizes.
 
