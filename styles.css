@@ -37,3 +37,15 @@ header{
     gap: 20px;
     margin-bottom: 20px;
 }
+
+#Custom-Design-Requests {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.product-type {
+    margin-bottom: 20px;
+    border: 1px solid #ffffff;
+    padding: 10px;
+    /* background-color: #dedeff; */
+}
