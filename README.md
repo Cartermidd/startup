@@ -2,20 +2,10 @@
 
 [My Notes](notes.md)
 
-<<<<<<< HEAD
-The ____ application is the best place for ____ service! You are going to want this!
-
-Ideas:
--Project Management
--Senior Assassin organization site
--Game
--For my mom's company
-=======
 Rock Canyon Design is a company that my mom recently started to sell custom handcrafted laser-cut creations. When I told her I was developing my web programming skills, she asked if I would design a website that would:
 1. Showcase her products through professional photos and videos.
 2. Provide a simple and secure way for customers to browse and purchase products.
 3. Allow customers to customize details in certain patterns to order individualized products.
->>>>>>> afbd031cedbf2888acb0ac21b7730f49a2c3bd34
 
 
 > [!NOTE]
