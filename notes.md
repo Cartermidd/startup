@@ -46,7 +46,7 @@ I tried to leave the website relatively barebones for now because I know we are 
 
 [Web Page Example](https://codepen.io/leesjensen/pen/jOKvbrv)
 
-This took a couple hours to get it how I wanted. It was important to make it responsive and Bootstrap helped with that. It looks great on all kinds of screen sizes.
+It's kinda difficult to get things to look right just messing around in CSS, [bootstrap](https://codepen.io/leesjensen/pen/JjZavjW) is helpful!
 
 Bootstrap seems a bit like magic. It styles things nicely, but is very opinionated. You either do, or you do not. There doesn't seem to be much in between.
 
