@@ -36,9 +36,9 @@ No problems worked just like it said in the [instruction](https://github.com/web
 
 [Media](https://codepen.io/Carter-Middleton/pen/vELBWrX)
 
-This was easy. I was careful to use the correct structural elements such as header, footer, main, nav, and form. The links between the three views work great using the `a` element.
+HTML isn't too hard and there are a lot of good resources. The structural elements are pretty intutive but I kept finding more that were useful. I used the div tag a ton, which seemed to be really helpful for making the items move stay in the right positions.
 
-The part I didn't like was the duplication of the header and footer code. This is messy, but it will get cleaned up when I get to React.
+I tried to leave the website relatively barebones for now because I know we are going to learn other tools that will make it much easier to clean it up and add in the things that we'll want.
 
 ## CSS
 
@@ -46,7 +46,7 @@ The part I didn't like was the duplication of the header and footer code. This i
 
 [Web Page Example](https://codepen.io/leesjensen/pen/jOKvbrv)
 
-This took a couple hours to get it how I wanted. It was important to make it responsive and Bootstrap helped with that. It looks great on all kinds of screen sizes.
+It's kinda difficult to get things to look right just messing around in CSS, [bootstrap](https://codepen.io/leesjensen/pen/JjZavjW) is helpful!
 
 Bootstrap seems a bit like magic. It styles things nicely, but is very opinionated. You either do, or you do not. There doesn't seem to be much in between.
 
