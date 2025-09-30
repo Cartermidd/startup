@@ -82,9 +82,9 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Header, footer, and main content body** - I did not complete this part of the deliverable.
-- [ ] **Navigation elements** - I did not complete this part of the deliverable.
-- [ ] **Responsive to window resizing** - I did not complete this part of the deliverable.
+- [ ] **Header, footer, and main content body** - Using the CSS framework, bootstrap, I made the elements in the header, footer, and main content look better.
+- [ ] **Navigation elements** - I made the navigation elements more clear and made it so you can tell what button you are hovering over.
+- [ ] **Responsive to window resizing** - I made the window size flexible so it works with mobile or desktop or other window sizes.
 - [ ] **Application elements** - I did not complete this part of the deliverable.
 - [ ] **Application text content** - I did not complete this part of the deliverable.
 - [ ] **Application images** - I did not complete this part of the deliverable.
