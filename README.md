@@ -82,12 +82,14 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Header, footer, and main content body** - Using the CSS framework, bootstrap, I made the elements in the header, footer, and main content look better.
-- [ ] **Navigation elements** - I made the navigation elements more clear and made it so you can tell what button you are hovering over.
-- [ ] **Responsive to window resizing** - I made the window size flexible so it works with mobile or desktop or other window sizes.
-- [ ] **Application elements** - I did not complete this part of the deliverable.
-- [ ] **Application text content** - I did not complete this part of the deliverable.
-- [ ] **Application images** - I did not complete this part of the deliverable.
+- [x] **Header, footer, and main content body** - Using CSS and the CSS framework, bootstrap, I made the elements in the header, footer, and main content look better. It's still a work in progress, but it looks much better than it did when it was just HTML.
+- [x] **Navigation elements** - I made the navigation elements more clear and made it so you can tell what button you are hovering over and what page you are currently on.
+- [x] **Responsive to window resizing** - I made the window size flexible so it works with mobile or desktop or other window sizes. Most of the items on the pages are responsive as well. The objects that aren't responsive yet are just placeholders.
+- [x] **Application elements** - I added in placeholders for a better way to display products with a link that will be able to lead to the specific product in the future. I also added in a featured product display that will be interactive in the future.
+- [x] **Application text content** - I worked with the CSS file until I got the text to be a font that I liked and to align correctly in the page regardless of the window size.
+- [x] **Application images** - I used CSS to make sure the images didn't align in weird ways with the text.
+
+Before further polishing, I want to consult with my mom and see what she wants her website to look like. I don't want to spend a lot of effort making something look pretty that I may just have to scrap completely.
 
 ## 🚀 React part 1: Routing deliverable
 
