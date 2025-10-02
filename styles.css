@@ -29,6 +29,21 @@ main {
 
 footer {
   flex: 0 30px;
+  align-items: right;
+  text-align: right;
+  background-color: rgb(194, 194, 194);
+}
+
+#sillyfootertext {
+    font-size: 1em;
+    color: gray;
+    margin-right: 5px;
+}
+
+#sillyfootertextname{
+    font-size: 1em;
+    font-weight: bold;
+    margin-right: 10px;
 }
 
 menu {
