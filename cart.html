@@ -3,34 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
-    <link rel="icon" href="favicon.ico" />
+    <title>Rock Canyon Design</title>
+    <link rel="icon" href="ChatGPT Image Sep 8, 2025, 01_29_06 PM.png" />
     <link rel="stylesheet" href="styles.css" />
+  
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    
+  
   </head>
-  <body>
-    <header>
+  <body class="bg-light text-dark">
+    <header class="container-fluid">
       <!-- <h1>Rock Canyon Design</h1> -->
-      <nav id="login_n_logo">
+      <nav class="navbar" id="login_n_logo">
         <div id="logo">
           <a href="index.html"><img width="175px" src="ChatGPT Image Sep 8, 2025, 01_29_06 PM.png" alt="Rock Canyon Design" /></a>
         </div>
         <div id="login">
-          <h3>Login or Create Account</h3>
-          <div><input type="text" id="text" name="userText" placeholder="Username" required pattern=".*" /></div>
-          <div><input type="password" id="password" name="passwordText" placeholder="Password" required pattern=".*" /></div>
-          <button type="submit">Login</button>
-          <button type="submit">Create</button>
+          <h5>Login or Create Account</h5>
+          <form method="get" action="/login">
+          <div class="input-group mb-1"><input class="form-control" type="text" id="text" name="userText" placeholder="Username" required pattern=".*" /></div>
+          <div class="input-group mb-1"><input class="form-control" type="password" id="password" name="passwordText" placeholder="Password" required pattern=".*" /></div>
+          <button type="submit" class="btn btn-primary btn-sm">Login</button>
+          <button type="submit" class="btn btn-secondary btn-sm">Create</button>
+          </form>
         </div>
       </nav>
       
+      <br />
+
 
       <nav>
-        <menu>
-          <a href="index.html">Home</a>
-          <a href="products.html">Products</a>
-          <a href="cart.html">Cart</a>
-          <a href="checkout.html">Check Out</a>
-        </menu>
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="index.html">Home</a></li>
+          <li class="page-item"><a class="page-link" href="products.html">Products</a></li>
+          <li class="page-item active"><a class="page-link" href="cart.html">Cart</a></li>
+          <li class="page-item"><a class="page-link" href="checkout.html">Check Out</a></li>
+        </ul>
       </nav>
 
     </header>
@@ -44,23 +57,65 @@
       <p>
         Your cart is empty. (Database data/Websocket goes here)
       </p>
-      <div class="product-box">
-          <!-- <a href=""> -->
+      <!-- <div class="product-box">
             <img width="100px" src="ChatGPT Image Sep 8, 2025, 01_29_06 PM.png" alt="Placeholder" />
             <div>
               <h2>Placeholder Name</h2>
               <p>Placeholder description</p>
             </div>
-          <!-- </a> -->
-        </div>
+        </div> -->
 
-      <a href="products.html">Continue Shopping</a>
-      <a href="checkout.html">Proceed to Checkout</a>
+      <div class="bd-example bd-example-placeholder-cards d-flex justify-content-around">
+      <div class="card">
+        <svg class="bd-placeholder-img card-img-top" width="50%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#FFFF00"></rect>
+        </svg>
+
+
+        <div class="card-body">
+          <h5 class="card-title">Placeholder Product Name 1</h5>
+          <p class="card-text">Placeholder explanation or discription about a product.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <div class="bd-example bd-example-placeholder-cards d-flex justify-content-around">
+      <div class="card">
+        <svg class="bd-placeholder-img card-img-top" width="50%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#20c997"></rect>
+        </svg>
+
+
+        <div class="card-body">
+          <h5 class="card-title">Placeholder Product Name 2</h5>
+          <p class="card-text">Placeholder explanation or discription about a product.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+            <div class="bd-example bd-example-placeholder-cards d-flex justify-content-around">
+      <div class="card">
+        <svg class="bd-placeholder-img card-img-top" width="50%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#89CFF0"></rect>
+        </svg>
+
+
+        <div class="card-body">
+          <h5 class="card-title">Placeholder Product Name 3</h5>
+          <p class="card-text">Placeholder explanation or discription about a product.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+      <hr />
 
     </main>
 
     <footer>
-    <footer>
+      
       <hr />
       <span class="text-reset">Site Designed by </span>
       <a href="https://github.com/Cartermidd">Carter Middleton</a>

@@ -1,3 +1,7 @@
+*{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
 
 body {
   display: flex;
@@ -20,6 +24,7 @@ main {
   align-items: center;
   justify-content: space-around;
   margin-left: 10px;
+  margin-right: 10px;
 }
 
 footer {
@@ -71,28 +76,13 @@ footer a {
 
 
 
-
-
-
-
-
-
-*{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-}
-
-
-
-
-
-
 #login_n_logo {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     border-bottom: 2px solid #ccc;
-    margin: 30px;
+    margin: 10px;
 }
 
 .product-box {

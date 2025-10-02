@@ -3,35 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
-    <link rel="icon" href="favicon.ico" />
+    <title>Rock Canyon Design</title>
+    <link rel="icon" href="ChatGPT Image Sep 8, 2025, 01_29_06 PM.png" />
     <link rel="stylesheet" href="styles.css" />
+  
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    
+  
   </head>
-  <body>
-    <header>
+  <body class="bg-light text-dark">
+    <header class="container-fluid">
       <!-- <h1>Rock Canyon Design</h1> -->
-      <nav id="login_n_logo">
+      <nav class="navbar" id="login_n_logo">
         <div id="logo">
           <a href="index.html"><img width="175px" src="ChatGPT Image Sep 8, 2025, 01_29_06 PM.png" alt="Rock Canyon Design" /></a>
         </div>
-        <!-- I should make it so you can see when you're logged in -->
         <div id="login">
-          <h3>Login or Create Account</h3>
-          <div><input type="text" id="text" name="userText" placeholder="Username" required pattern=".*" /></div>
-          <div><input type="password" id="password" name="passwordText" placeholder="Password" required pattern=".*" /></div>
-          <button type="submit">Login</button>
-          <button type="submit">Create</button>
+          <h5>Login or Create Account</h5>
+          <form method="get" action="/login">
+          <div class="input-group mb-1"><input class="form-control" type="text" id="text" name="userText" placeholder="Username" required pattern=".*" /></div>
+          <div class="input-group mb-1"><input class="form-control" type="password" id="password" name="passwordText" placeholder="Password" required pattern=".*" /></div>
+          <button type="submit" class="btn btn-primary btn-sm">Login</button>
+          <button type="submit" class="btn btn-secondary btn-sm">Create</button>
+          </form>
         </div>
       </nav>
       
+      <br />
+
 
       <nav>
-        <menu>
-          <a href="index.html">Home</a>
-          <a href="products.html">Products</a>
-          <a href="cart.html">Cart</a>
-          <a href="checkout.html">Check Out</a>
-        </menu>
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="index.html">Home</a></li>
+          <li class="page-item"><a class="page-link" href="products.html">Products</a></li>
+          <li class="page-item"><a class="page-link" href="cart.html">Cart</a></li>
+          <li class="page-item active"><a class="page-link" href="checkout.html">Check Out</a></li>
+        </ul>
       </nav>
 
     </header>
@@ -52,7 +64,7 @@
 
       <div id="price-n-pay-box">
         <h2>Total Price: $ [variable]</h2>
-        <button type="submit">Purchase</button>
+        <button type="submit" class="btn btn-primary btn-sm">Purchase</button>
       </div>
 
       <div id="shipping-info">
