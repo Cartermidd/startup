@@ -35,7 +35,7 @@ export default function App() {
       </nav>
 
     </header>
-    <main className='container-fluid bg-secondary text-center'>App components</main>
+    <main className='container-fluid bg-primary text-center'>App components</main>
     <hr />
     <footer>
       <span id='sillyfootertext' className="text-reset">Site designed by   </span>
