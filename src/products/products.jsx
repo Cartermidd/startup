@@ -8,7 +8,7 @@ export function Products() {
       <h1>PRODUCTS</h1>
       <p>Browse our products and see which designs would be the perfect gift you are looking for!</p>
       <nav>
-        <ul className="pagination">
+        <ul id="product-type-selection" className="pagination">
           <li className="page-item"><a className="page-link" href="#Wooden-Products">Wooden</a></li>
           <li className="page-item"><a className="page-link" href="#Acrylic-Products">Acrylic</a></li>
           <li className="page-item"><a className="page-link" href="#Giftcard-Holder-Products">Giftcard Holders</a></li>

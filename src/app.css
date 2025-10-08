@@ -137,3 +137,36 @@ button {
     margin-right: 5px;
     margin-left: 5px;
 }
+
+#product-type-selection {
+    display: flex;
+    justify-content: center;
+    background-color: #4b6f81a2;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#Wooden-Products {
+    background-color: #e69e68d0;
+    border-radius: 5px;
+  }
+
+#Acrylic-Products {
+    background-color: #92b8c5c5;
+    border-radius: 5px;
+  }
+
+#Giftcard-Holder-Products {
+    background-color: #ed6b6bbc;
+    border-radius: 5px;
+  }
+
+#Other-Products {
+    background-color: #828a969d;
+    border-radius: 5px;
+  }
+
+.product-box {
+    background-color: #ffffff;
+    border-radius: 5px;
+}
