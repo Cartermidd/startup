@@ -11,9 +11,9 @@ import { Products } from './products/products';
 export default function App() {
     return (
         <BrowserRouter>
-        <div className='app bg-dark text-light'>
+        <div className='app bg-light text-dark'>
 
-        <header className="container-fluid">
+        <header className="container-fluid bg-info">
       <nav className="navbar" id="login_n_logo">
         <div id="logo">
           <NavLink to="/"><img width="175px" src="/rockcanyon_design.png" alt="Rock Canyon Design" /></NavLink>
@@ -52,7 +52,7 @@ export default function App() {
     </Routes>
     
     
-    <hr />
+
     <footer>
       <span id='sillyfootertext' className="text-reset">Site designed by   </span>
       <a id='sillyfootertextname' href="https://github.com/Cartermidd">Carter Middleton</a>

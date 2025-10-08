@@ -3,7 +3,7 @@ import React from 'react';
 
 export function Home() {
     return (
-        <main className='container-fluid bg-primary text-center'>
+        <main className='container-fluid bg-light'>
             <div>
         <div className="bd-example">
         <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">

@@ -3,7 +3,7 @@ import React from 'react';
 
 export function Cart() {
     return (
-        <main className='container-fluid bg-primary text-center'>
+        <main className='container-fluid bg-light text-center'>
       <h1>
         Your Cart
       </h1>

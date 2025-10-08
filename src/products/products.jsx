@@ -3,7 +3,7 @@ import React from 'react';
 
 export function Products() {
     return (
-        <main className='container-fluid bg-primary text-center'>
+        <main className='container-fluid bg-light text-center'>
             <div>
       <h1>PRODUCTS</h1>
       <p>Browse our products and see which designs would be the perfect gift you are looking for!</p>
@@ -17,7 +17,7 @@ export function Products() {
         </ul>
       </nav>
 
-      <div id = "Wooden-Products" className = "product-type">
+      <div id = "Wooden-Products" className = "container-fluid product-type">
         <h2>Wooden Products</h2>
         <div className="product-box">
            

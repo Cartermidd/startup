@@ -3,7 +3,7 @@ import React from 'react';
 
 export function Checkout() {
     return (
-        <main className='container-fluid bg-primary text-center'>
+        <main className='container-fluid bg-light text-center'>
             <div>
                 <h1>CHECK OUT</h1>
 
