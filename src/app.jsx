@@ -1,15 +1,22 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { Home } from './home/home';
+import { Cart } from './cart/cart';
+import { Checkout } from './checkout/checkout';
+import { Products } from './products/products';
+
 
 export default function App() {
     return (
+        <BrowserRouter>
         <div className='app bg-dark text-light'>
 
         <header className="container-fluid">
       <nav className="navbar" id="login_n_logo">
         <div id="logo">
-          <a href="index.html"><img width="175px" src="/rockcanyon_design.png" alt="Rock Canyon Design" /></a>
+          <NavLink to="/"><img width="175px" src="/rockcanyon_design.png" alt="Rock Canyon Design" /></NavLink>
         </div>
         <div id="login">
           <h5>Login or Create Account</h5>
@@ -27,20 +34,37 @@ export default function App() {
 
       <nav>
         <ul className="pagination">
-          <li className="page-item active"><a className="page-link" href="index.html">Home</a></li>
-          <li className="page-item"><a className="page-link" href="products.html">Products</a></li>
-          <li className="page-item"><a className="page-link" href="cart.html">Cart</a></li>
-          <li className="page-item"><a className="page-link" href="checkout.html">Check Out</a></li>
+          <li className="page-item"><NavLink className="page-link" to="/">Home</NavLink></li>
+          <li className="page-item"><NavLink className="page-link" to="products">Products</NavLink></li>
+          <li className="page-item"><NavLink className="page-link" to="cart">Cart</NavLink></li>
+          <li className="page-item"><NavLink className="page-link" to="checkout">Check Out</NavLink></li>
         </ul>
       </nav>
 
     </header>
-    <main className='container-fluid bg-primary text-center'>App components</main>
+    
+    <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="*" element={<Home />} />
+    </Routes>
+    
+    
     <hr />
     <footer>
       <span id='sillyfootertext' className="text-reset">Site designed by   </span>
       <a id='sillyfootertextname' href="https://github.com/Cartermidd">Carter Middleton</a>
     </footer>  
         </div>
+        </BrowserRouter>
     )
+}
+
+
+function NotFound() {
+    return <main className='container-fluid bg-primary text-center'>
+        <div>404 - Page Not Found</div>
+    </main>
 }
