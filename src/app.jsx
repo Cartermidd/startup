@@ -44,11 +44,11 @@ export default function App() {
     </header>
     
     <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="*" element={<Home />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/products' element={<Products />} />
+        <Route path='/cart' element={<Cart />} />
+        <Route path='/checkout' element={<Checkout />} />
+        <Route path='*' element={<NotFound />} />
     </Routes>
     
     
@@ -64,7 +64,8 @@ export default function App() {
 
 
 function NotFound() {
-    return <main className='container-fluid bg-primary text-center'>
+    return <main className='container-fluid bg-light text-center'>
         <div>404 - Page Not Found</div>
+        <p>click here to <NavLink to="/"> phone home</NavLink></p>
     </main>
 }
