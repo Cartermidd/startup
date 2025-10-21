@@ -93,45 +93,124 @@ I also used SVG to make the icon and logo for the app. This turned out to be a p
 
 Setting up Vite and React was pretty simple. I had a bit of trouble because of conflicting CSS. This isn't as straight forward as you would find with Svelte or Vue, but I made it work in the end. If there was a ton of CSS it would be a real problem. It sure was nice to have the code structured in a more usable way.
 
-In the following code, what does the link element do? Links to external resourse in the head portion of HTML
-In the following code,  what does a div tag do? Makes a divider, separates parts of code
-In the following code, what is the difference between the #title and .grid selector? id = title vs class = grid
-In the following code, what is the difference between padding and margin? Margin is space between elements outside the element "pushes the object away from others" Padding is space within an element pushes content in from the border
-Given this HTML and this CSS how will the images be displayed using flex? Makes object flexible
+In the following code, what does the link element do?
+
+Links to external resourse in the head portion of HTML
+In the following code,  what does a div tag do?
+
+Makes a divider, separates parts of code
+In the following code, what is the difference between the #title and .grid selector?
+
+id = title vs class = grid
+In the following code, what is the difference between padding and margin?
+
+Margin is space between elements outside the element "pushes the object away from others" Padding is space within an element pushes content in from the border
+Given this HTML and this CSS how will the images be displayed using flex?
+
+Makes object flexible
 What does the following padding CSS do?
-What does the following code using arrow syntax function declaration do? Works with one-liner functions, makes the variable do => this
-What does the following code using map with an array output? Map makes an adjustment to eact element in an array, outputs new array. Iterates over each element
-What does the following code output using getElementByID and addEventListener? getElementById will watch a specific element in HTML and the ().addEventListener() will watch for a specific event
-What does the following line of Javascript do using a # selector? Selects elements by their id
-Which of the following are true? (mark all that are true about the DOM) Tree, Nodes, and objects, one nodes is your index, submodules. All pages tree'd under main index page
-By default, the HTML span element has a default CSS display property value of: inline, span will fit inline with the elements around it. Doesn't start a new line
-How would you use CSS to change all the div elements to have a background color of red? div {
+What does the following code using arrow syntax function declaration do?
+
+Works with one-liner functions, makes the variable do => this
+What does the following code using map with an array output?
+
+Map makes an adjustment to eact element in an array, outputs new array. Iterates over each element
+What does the following code output using getElementByID and addEventListener? 
+
+getElementById will watch a specific element in HTML and the ().addEventListener() will watch for a specific event
+What does the following line of Javascript do using a # selector?
+
+Selects elements by their id
+Which of the following are true? (mark all that are true about the DOM)
+
+Tree, Nodes, and objects, one nodes is your index, submodules. All pages tree'd under main index page
+By default, the HTML span element has a default CSS display property value of: 
+
+inline, span will fit inline with the elements around it. Doesn't start a new line
+How would you use CSS to change all the div elements to have a background color of red? 
+
+div {
       background-color: red;
       }
-How would you display an image with a hyperlink in HTML? <img source="" alt="">
+How would you display an image with a hyperlink in HTML? 
+
+<img source="" alt="">
 In the CSS box model, what is the ordering of the box layers starting at the inside and working out?
+
+
 <img width="1290" height="804" alt="image" src="https://github.com/user-attachments/assets/5e4fdaa8-dfc2-4c4e-9a49-b24dcd5c8b8a" />
 
 
 Given the following HTML, what CSS would you use to set the text "trouble" to green and leave the "double" text unaffected?
+
+# id tag type thing
 What will the following code output when executed using a for loop and console.log?
+
+
 How would you use JavaScript to select an element with the id of “byu” and change the text color of that element to green?
+
+const byu = getElementByID('byu');
+byu.style.color = "green";
+
 What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading?
+
+<p></p>, <ol></ol> <ul></ul> <h2></h2> <h1></h1> <h3></h3>
+
 How do you declare the document type to be html?
+<html></html>
+
 What is valid javascript syntax for if, else, for, while, switch statements?
+if (){}
+
 What is the correct syntax for creating a javascript object?
+newObject()
+
 Is it possible to add new properties to javascript objects?
+
+yes
+
 If you want to include JavaScript on an HTML page, which tag do you use?
+
+<script></script>
+
 Given the following HTML, what JavaScript could you use to set the text "animal" to "crow" and leave the "fish" text unaffected?
+
+
+
 Which of the following correctly describes JSON?
+lightweight, text-based, {}
+
+
 What does the console command chmod, pwd, cd, ls, vim, nano, mkdir, mv, rm, man, ssh, ps, wget, sudo  do?
+chmod - modifies permissions, pwd present working directory, change directory, list, open file in vim/nano, make directory, move, remove, manuel, remote shell session, current processes, wget retrives files from internet, superuser do
+
+
 Which of the following console command creates a remote shell session?
+ssh
+
 Which of the following is true when the -la parameter is specified for the ls console command?
+long, all files
+
 Which of the following is true for the domain name banana.fruit.bozo.click, which is the top level domain, which is a subdomain, which is a root domain?
+top level : .click
+root domain: bozo.click
+subdomian: banana.fruit
+
 Is a web certificate is necessary to use HTTPS.
+Yes
+
+
 Can a DNS A record can point to an IP address or another A record.
+Only IPv4 address
+
+
 Port 443, 80, 22 is reserved for which protocol?
+443 - HTTPS
+80 - HTTP
+22 - SSH
+
 What will the following code using Promises output when executed?
+
 
 ## React Part 2: Reactivity
 
