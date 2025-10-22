@@ -95,9 +95,9 @@ Before further polishing, I want to consult with my mom and see what she wants h
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Bundled using Vite** - I did not complete this part of the deliverable.
-- [ ] **Components** - I did not complete this part of the deliverable.
-- [ ] **Router** - I did not complete this part of the deliverable.
+- [x] **Bundled using Vite** - I bundled all of the react code using vite.
+- [x] **Components** - I ensured that the webpage can display each page with the correct components for each page.
+- [x] **Router** - I created routing that will insert the correct HTML display without changing the URL to include the .html tag.
 
 ## 🚀 React part 2: Reactivity deliverable
 
