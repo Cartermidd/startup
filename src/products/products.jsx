@@ -21,22 +21,24 @@ export function Products() {
         <h2>Wooden Products</h2>
         <div className="product-box">
            
-          <img width="100px" src="/rockcanyon_design.png" alt="Placeholder" />
-          <div>
+          <img className="product-img" src="/rockcanyon_design.png" alt="Placeholder" />
+          <div className="product-details">
             <h2>Placeholder Name</h2>
             <p>Placeholder description</p>
           </div>
-           
+
+          <button className="btn btn-success btn-bg"><img src="/shopping-cart.png" width="25"></img></button>
         </div>
 
         <div className="product-box">
            
-          <img width="100px" src="/rockcanyon_design.png" alt="Placeholder" />
-          <div>
+          <img className="product-img" src="/rockcanyon_design.png" alt="Placeholder" />
+          <div className="product-details">
             <h2>Placeholder Name</h2>
             <p>Placeholder description</p>
           </div>
-           
+
+          <button className="btn btn-success btn-bg"><img src="/shopping-cart.png" width="25"></img></button>
         </div>
       </div>
 
@@ -46,32 +48,26 @@ export function Products() {
         <h2>Acrylic Products</h2>
         <div className="product-box">
            
-          <img width="100px" src="/rockcanyon_design.png" alt="Placeholder" />
-          <div>
+          <img className="product-img" src="/rockcanyon_design.png" alt="Placeholder" />
+          <div className="product-details">
             <h2>Placeholder Name</h2>
             <p>Placeholder description</p>
           </div>
-           
+
+          <button className="btn btn-success btn-bg"><img src="/shopping-cart.png" width="25"></img></button>
         </div>
 
         <div className="product-box">
-          <img width="100px" src="/rockcanyon_design.png" alt="Placeholder" />
-          <div>
+           
+          <img className="product-img" src="/rockcanyon_design.png" alt="Placeholder" />
+          <div className="product-details">
             <h2>Placeholder Name</h2>
             <p>Placeholder description</p>
           </div>
-           
-        </div>
 
-              <div className="product-box">
-           
-            <img width="100px" src="/rockcanyon_design.png" alt="Placeholder" />
-            <div>
-              <h2>Placeholder Name</h2>
-              <p>Placeholder description</p>
-            </div>
-           
+          <button className="btn btn-success btn-bg"><img src="/shopping-cart.png" width="25"></img></button>
         </div>
+           
       </div>
 
 
@@ -80,33 +76,26 @@ export function Products() {
         <h2>Giftcard Holder Products</h2>
         <div className="product-box">
            
-          <img width="100px" src="/rockcanyon_design.png" alt="Placeholder" />
-          <div>
+          <img className="product-img" src="/rockcanyon_design.png" alt="Placeholder" />
+          <div className="product-details">
             <h2>Placeholder Name</h2>
             <p>Placeholder description</p>
           </div>
-           
+
+          <button className="btn btn-success btn-bg"><img src="/shopping-cart.png" width="25"></img></button>
         </div>
 
         <div className="product-box">
            
-          <img width="100px" src="/rockcanyon_design.png" alt="Placeholder" />
-          <div>
+          <img className="product-img" src="/rockcanyon_design.png" alt="Placeholder" />
+          <div className="product-details">
             <h2>Placeholder Name</h2>
             <p>Placeholder description</p>
           </div>
-           
+
+          <button className="btn btn-success btn-bg"><img src="/shopping-cart.png" width="25"></img></button>
         </div>
 
-              <div className="product-box">
-           
-            <img width="100px" src="/rockcanyon_design.png" alt="Placeholder" />
-            <div>
-              <h2>Placeholder Name</h2>
-              <p>Placeholder description</p>
-            </div>
-           
-        </div>
 
         </div>
 
@@ -114,33 +103,26 @@ export function Products() {
         <h2>Other Products</h2>
         <div className="product-box">
            
-          <img width="100px" src="/rockcanyon_design.png" alt="Placeholder" />
-          <div>
+          <img className="product-img" src="/rockcanyon_design.png" alt="Placeholder" />
+          <div className="product-details">
             <h2>Placeholder Name</h2>
             <p>Placeholder description</p>
           </div>
-           
+
+          <button className="btn btn-success btn-bg"><img src="/shopping-cart.png" width="25"></img></button>
         </div>
 
         <div className="product-box">
            
-          <img width="100px" src="/rockcanyon_design.png" alt="Placeholder" />
-          <div>
+          <img className="product-img" src="/rockcanyon_design.png" alt="Placeholder" />
+          <div className="product-details">
             <h2>Placeholder Name</h2>
             <p>Placeholder description</p>
           </div>
-           
+
+          <button className="btn btn-success btn-bg"><img src="/shopping-cart.png" width="25"></img></button>
         </div>
 
-        <div className="product-box">
-           
-            <img width="100px" src="/rockcanyon_design.png" alt="Placeholder" />
-            <div>
-              <h2>Placeholder Name</h2>
-              <p>Placeholder description</p>
-            </div>
-           
-        </div>
       </div>
 
 
