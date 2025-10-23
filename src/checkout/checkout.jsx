@@ -7,10 +7,20 @@ export function Checkout({ cartItems = [], onToggleCart = () => {} }) {
     const items = cartItems.map(id => productData.find(p => p.id === id)).filter(Boolean);
 
     const total = items.reduce((sum, item) => {
-        // productData currently doesn't include price; assume $10 each as placeholder
-        const price = item.price ?? 10;
+        const price = item.price;
         return sum + price;
     }, 0);
+
+
+    function getRandomItem(){
+        const randomIndex = Math.floor(Math.random() * productData.length);
+        return productData[randomIndex];
+    }
+
+    // pick a featured random item when the cart is empty
+    const randomItem = items.length === 0 ? getRandomItem() : null;
+
+
 
     return (
         <main className='container-fluid bg-light text-center'>
@@ -48,6 +58,27 @@ export function Checkout({ cartItems = [], onToggleCart = () => {} }) {
                     {items.length === 0 ? (
                         <section className="featured-item-box">
                             <h3>Check out this featured item!</h3>
+                            {randomItem && (
+                            <div key={randomItem.id} className="product-box">
+                                    <img src={randomItem.image} alt={randomItem.name} className="product-img" />
+                                    <div>
+                                        <h2>{randomItem.name}</h2>
+                                        <p>{randomItem.description}</p>
+                                    </div>
+
+                                    <div className="product-actions">
+                                        <button
+                                            onClick={() => onToggleCart(randomItem.id)}
+                                            className="btn btn-success btn-sm"
+                                        >
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                    <h4 id="checkout-price">{`$${randomItem.price ?? 10}`}</h4>
+                                </div>
+                            )}
+                            
+
                         </section>
                     ) : (
                         <section className="pay-shipping-box">
