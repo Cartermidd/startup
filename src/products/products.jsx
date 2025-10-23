@@ -39,6 +39,11 @@ export function Products({ cartItems, onToggleCart }) {
     </div>
   );
 
+  const submitRequest = () => {
+    // function to handle custom design request submission
+    alert('Your custom design request has been submitted!');
+    alert("it actually hasn't yet")
+  }
 
   return (
     <main className='container-fluid bg-light text-center'>
@@ -73,7 +78,7 @@ export function Products({ cartItems, onToggleCart }) {
             <textarea id="details" name="details" rows="4" cols="50" required></textarea><br />
             <label htmlFor="file">Optional Image Upload:</label><br />
             <input type="file" id="file" name="file" accept="image/*" /><br />
-            <button type="submit" className="btn btn-primary btn-sm">Submit Request</button>
+            <button onClick={() => submitRequest()} type="submit" className="btn btn-primary btn-sm">Submit Request</button>
           </form>
         </div>
 
