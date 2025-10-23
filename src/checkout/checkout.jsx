@@ -3,6 +3,17 @@ import { NavLink } from 'react-router-dom';
 import productData from '../products/productData';
 
 
+export function shippingInfo() {
+    return (<img width="200px" src="" alt="Some sort of shipping display" />);
+}
+
+export function purchase()  {
+    alert('Purchase complete! Thank you for your order.');
+    alert("Purchase functionality is not yet implemented.");
+    return (null);
+}
+
+
 export function Checkout({ cartItems = [], onToggleCart = () => {}, userName = 'Guest' }) {
     const items = cartItems.map(id => productData.find(p => p.id === id)).filter(Boolean);
 
@@ -86,12 +97,12 @@ export function Checkout({ cartItems = [], onToggleCart = () => {}, userName = '
                         <section className="pay-shipping-box">
                             <div id="price-n-pay-box">
                                 <h2 id="total-price">Total Price: ${total}</h2>
-                                <button type="submit" className="btn btn-primary btn-sm">Make Purchase</button>
+                                <button onClick={() => purchase()} type="submit" className="btn btn-primary btn-sm">Make Purchase</button>
                                 <NavLink to="/products" className="btn btn-secondary btn-sm">Browse Products</NavLink>
                             </div>
                             <div id="shipping-info">
                                 <h2>API shipping information</h2>
-                                <img width="200px" src="" alt="Some sort of shipping display" />
+                                {shippingInfo()}
                             </div>
                         </section>
                     )}
