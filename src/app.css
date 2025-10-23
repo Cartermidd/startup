@@ -218,3 +218,17 @@ button {
     background-color: #ffffffc7;
     border-radius: 5px;
 }
+
+#checkout-price {
+    font-weight: bold;
+    align-items: right;
+}
+
+#total-price {
+  font-weight: bold;
+}
+
+#shipping-info {
+    margin-top: 20px;
+    padding: 10px;
+}
