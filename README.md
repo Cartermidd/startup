@@ -103,7 +103,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [x] **All functionality implemented or mocked out** - The website has all functionality implemented.
+- [x] **All functionality implemented or mocked out** - The website has all major functionality implemented.
 - [x] **Hooks** - The hooks are in.
 
 ## 🚀 Service deliverable
