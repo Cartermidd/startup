@@ -80,7 +80,7 @@ export default function App() {
         <Route path='/' element={<Home />} />
         <Route path='/products' element={<Products cartItems={cartItems} onToggleCart={handleToggleCart} />} />
         <Route path='/cart' element={<Cart cartItems={cartItems} onToggleCart={handleToggleCart}/>} />
-        <Route path='/checkout' element={<Checkout cartItems={cartItems} onToggleCart={handleToggleCart}/>} />
+        <Route path='/checkout' element={<Checkout cartItems={cartItems} onToggleCart={handleToggleCart} userName={userName}/>} />
         <Route path='*' element={<NotFound />} />
     </Routes>
     

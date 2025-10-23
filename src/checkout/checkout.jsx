@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import productData from '../products/productData';
 
 
-export function Checkout({ cartItems = [], onToggleCart = () => {} }) {
+export function Checkout({ cartItems = [], onToggleCart = () => {}, userName = 'Guest' }) {
     const items = cartItems.map(id => productData.find(p => p.id === id)).filter(Boolean);
 
     const total = items.reduce((sum, item) => {
@@ -26,7 +26,7 @@ export function Checkout({ cartItems = [], onToggleCart = () => {} }) {
         <main className='container-fluid bg-light text-center'>
                 <div>
                 <h1>CHECK OUT</h1>
-                <h2>Welcome, [username]!</h2>
+                <h2>Welcome, {userName}!</h2>
                 </div>
                 <section className="checkout-items">
                     {items.length === 0 ? (
