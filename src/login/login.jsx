@@ -7,7 +7,7 @@ export function Login({ userName, authState, onAuthChange}) {
       <div className="login-box">
         {authState === AuthState.Authenticated ? (
           <div className="user-info">
-            <span>Welcome, {userName}!</span>
+            <span><h3>{userName}</h3></span>
             <button 
               className="btn btn-secondary btn-sm" 
               onClick={() => onAuthChange('', AuthState.Unauthenticated)}
@@ -46,7 +46,7 @@ export function Login({ userName, authState, onAuthChange}) {
                 />
               </div>
               <button type="submit" className="btn btn-primary btn-sm">Login</button>
-              <button type="button" className="btn btn-secondary btn-sm">Create</button>
+              <button type="submit" className="btn btn-secondary btn-sm">Create</button>
             </form>
           </div>
         )}

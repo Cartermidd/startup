@@ -20,7 +20,9 @@ export function Checkout({ cartItems = [], onToggleCart = () => {}, userName = '
     // pick a featured random item when the cart is empty
     const randomItem = items.length === 0 ? getRandomItem() : null;
 
-
+    if (userName === '') {
+        userName = 'Guest';
+    }
 
     return (
         <main className='container-fluid bg-light text-center'>
