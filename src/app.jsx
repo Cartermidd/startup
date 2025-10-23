@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
@@ -6,10 +7,24 @@ import { Home } from './home/home';
 import { Cart } from './cart/cart';
 import { Checkout } from './checkout/checkout';
 import { Products } from './products/products';
-import { useState } from 'react';
+import { Login } from './login/login';
+import { AuthState } from './login/authState';
 
   
 export default function App() {
+  const [userName, setUserName] = useState(localStorage.getItem('userName') || '');
+  const [authState, setAuthState] = useState(userName ? AuthState.Authenticated : AuthState.Unauthenticated);
+
+  function handleAuthChange(username, newAuthState) {
+    setUserName(username);
+    setAuthState(newAuthState);
+    if (newAuthState === AuthState.Authenticated) {
+      localStorage.setItem('userName', username);
+    } else {
+      localStorage.removeItem('userName');
+    }
+  }
+
   // if item is not in cart array and button is pressed, add item to cart and change button color to red
   // if item is in cart array and button is pressed, remove item from cart and change button color to green
   const [cartItems, setCartItems] = useState(() => {
@@ -42,14 +57,8 @@ export default function App() {
         <div id="logo">
           <NavLink to="/"><img width="175px" src="/rockcanyon_design.png" alt="Rock Canyon Design" /></NavLink>
         </div>
-        <div id="login">
-          <h5>Login or Create Account</h5>
-          <form method="get" action="/login">
-          <div className="input-group mb-1"><input className="form-control" type="text" id="username" name="userText" placeholder="Username" required pattern=".*" /></div>
-          <div className="input-group mb-1"><input className="form-control" type="password" id="password" name="passwordText" placeholder="Password" required pattern=".*" /></div>
-          <button type="submit" className="btn btn-primary btn-sm">Login</button>
-          <button type="button" className="btn btn-secondary btn-sm">Create</button>
-          </form>
+        <div className="login-container">
+          <Login userName={userName} authState={authState} onAuthChange={handleAuthChange} />
         </div>
       </nav>
       
@@ -85,7 +94,6 @@ export default function App() {
         </BrowserRouter>
     )
 }
-
 
 function NotFound() {
     return <main className='container-fluid bg-light text-center'>
