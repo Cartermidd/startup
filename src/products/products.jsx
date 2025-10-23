@@ -1,15 +1,48 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import productData from './productData';
+
+export function Products({ cartItems, onToggleCart }) {
+  const woodenProducts = productData.filter(product => product.category === 'Wooden');
+  const acrylicProducts = productData.filter(product => product.category === 'Acrylic');
+  const giftcardHolderProducts = productData.filter(product => product.category === 'Giftcard Holder');
+  const otherProducts = productData.filter(product => product.category === 'Other');
 
 
+  const renderPrdoductSection = (title, products, sectionId) => (
+    <div id={sectionId} className="container-fluid product-type">
+      <h2>{title}</h2>
+      <div className='product-type-box'>
+        {products.map(product => (
+        <div key={product.id} className="product-box">
+        <img
+          className="product-img"
+          src={product.image}
+          alt={product.name}
+        />
+        <div className="product-details">
+          <h2>{product.name}</h2>
+          <p>{product.description}</p>
+        </div>
+        <div id="cart-n-price">
+        <button
+          onClick={() => onToggleCart(product.id)}
+          className={`btn ${ cartItems.includes(product.id) ? 'btn-danger' : 'btn-success'} btn-bg`}
+        >
+          {cartItems.includes(product.id) ? 'In Cart' : 'Add to Cart'}
+          <img src="/shopping-cart.png" width="25" alt="Cart Icon" />
+        </button>
+        <p>Price: ${product.price}</p>
+        </div>
+      </div>
+    ))}
+    </div>
+    </div>
+  );
 
 
-
-
-export function Products() {
-    return (
-        <main className='container-fluid bg-light text-center'>
-            <div>
+  return (
+    <main className='container-fluid bg-light text-center'>
+    <div>
       <h1>PRODUCTS</h1>
       <p>Browse our products and see which designs would be the perfect gift you are looking for!</p>
       <nav>
@@ -22,114 +55,11 @@ export function Products() {
         </ul>
       </nav>
 
-      <div id = "Wooden-Products" className = "container-fluid product-type">
-        <h2>Wooden Products</h2>
-        <div className="product-box">
-           
-          <img className="product-img" src="/rockcanyon_design.png" alt="Placeholder" />
-          <div className="product-details">
-            <h2>Placeholder Name</h2>
-            <p>Placeholder description</p>
-          </div>
 
-          <button className="btn btn-success btn-bg"><img src="/shopping-cart.png" width="25"></img></button>
-        </div>
-
-        <div className="product-box">
-           
-          <img className="product-img" src="/rockcanyon_design.png" alt="Placeholder" />
-          <div className="product-details">
-            <h2>Placeholder Name</h2>
-            <p>Placeholder description</p>
-          </div>
-
-          <button className="btn btn-success btn-bg"><img src="/shopping-cart.png" width="25"></img></button>
-        </div>
-      </div>
-
-
-
-      <div id = "Acrylic-Products" className = "product-type">
-        <h2>Acrylic Products</h2>
-        <div className="product-box">
-           
-          <img className="product-img" src="/rockcanyon_design.png" alt="Placeholder" />
-          <div className="product-details">
-            <h2>Placeholder Name</h2>
-            <p>Placeholder description</p>
-          </div>
-
-          <button className="btn btn-success btn-bg"><img src="/shopping-cart.png" width="25"></img></button>
-        </div>
-
-        <div className="product-box">
-           
-          <img className="product-img" src="/rockcanyon_design.png" alt="Placeholder" />
-          <div className="product-details">
-            <h2>Placeholder Name</h2>
-            <p>Placeholder description</p>
-          </div>
-
-          <button className="btn btn-success btn-bg"><img src="/shopping-cart.png" width="25"></img></button>
-        </div>
-           
-      </div>
-
-
-
-      <div id = "Giftcard-Holder-Products" className = "product-type">
-        <h2>Giftcard Holder Products</h2>
-        <div className="product-box">
-           
-          <img className="product-img" src="/rockcanyon_design.png" alt="Placeholder" />
-          <div className="product-details">
-            <h2>Placeholder Name</h2>
-            <p>Placeholder description</p>
-          </div>
-
-          <button className="btn btn-success btn-bg"><img src="/shopping-cart.png" width="25"></img></button>
-        </div>
-
-        <div className="product-box">
-           
-          <img className="product-img" src="/rockcanyon_design.png" alt="Placeholder" />
-          <div className="product-details">
-            <h2>Placeholder Name</h2>
-            <p>Placeholder description</p>
-          </div>
-
-          <button className="btn btn-success btn-bg"><img src="/shopping-cart.png" width="25"></img></button>
-        </div>
-
-
-        </div>
-
-      <div id = "Other-Products" className = "product-type">
-        <h2>Other Products</h2>
-        <div className="product-box">
-           
-          <img className="product-img" src="/rockcanyon_design.png" alt="Placeholder" />
-          <div className="product-details">
-            <h2>Placeholder Name</h2>
-            <p>Placeholder description</p>
-          </div>
-
-          <button className="btn btn-success btn-bg"><img src="/shopping-cart.png" width="25"></img></button>
-        </div>
-
-        <div className="product-box">
-           
-          <img className="product-img" src="/rockcanyon_design.png" alt="Placeholder" />
-          <div className="product-details">
-            <h2>Placeholder Name</h2>
-            <p>Placeholder description</p>
-          </div>
-
-          <button className="btn btn-success btn-bg"><img src="/shopping-cart.png" width="25"></img></button>
-        </div>
-
-      </div>
-
+      {renderPrdoductSection('Wooden Products', woodenProducts, 'Wooden-Products')}
+      {renderPrdoductSection('Acrylic Products', acrylicProducts, 'Acrylic-Products')}
+      {renderPrdoductSection('Giftcard Holder Products', giftcardHolderProducts, 'Giftcard-Holder-Products')}
+      {renderPrdoductSection('Other Products', otherProducts, 'Other-Products')}
 
         <div id="Custom-Design-Requests" className="product-type">
           <h2>Custom Design Requests</h2>

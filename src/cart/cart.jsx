@@ -1,66 +1,48 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import productData from '../products/productData';
+
+export function Cart({ cartItems, onToggleCart }) {
+  const renderCart = () => {
+    if (cartItems.length === 0) {
+      return (
+        <div>
+          <p>Your cart is empty.</p>
+          <NavLink to="/products" className="btn btn-primary">Browse Products</NavLink>
+        </div>
+      );
+    }
+
+    return cartItems.map(productId => {
+      const product = productData.find(p => p.id === productId);
+      if (!product) return null;
+      
+      return (
+        <div key={product.id} className="product-box">
+          <img src={product.image} alt={product.name} className="product-img" />
+          <div className="product-details">
+            <h2>{product.name}</h2>
+            <p>{product.description}</p>
+          </div>
+          <button
+            onClick={() => onToggleCart(product.id)}
+            className="btn btn-danger btn-bg"
+          >
+            <img src="/shopping-cart.png" width="25" alt="Cart Icon" />
+          </button>
+        </div>
+      );
+    });
+  };
 
 
-export function Cart() {
     return (
-        <main className='container-fluid bg-light text-center'>
-      <h1>
-        Your Cart
-      </h1>
-
-      <p>
-        Your cart is empty. (Database data/Websocket goes here)
-      </p>
-
-      <div className="bd-example bd-example-placeholder-cards d-flex justify-content-around">
-      <div className="card">
-        <svg className="bd-placeholder-img card-img-top" width="50%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-          <title>Placeholder</title>
-          <rect width="100%" height="100%" fill="#FFFF00"></rect>
-        </svg>
-
-
-        <div className="card-body">
-          <h5 className="card-title">Placeholder Product Name 1</h5>
-          <p className="card-text">Placeholder explanation or discription about a product.</p>
-          <a href="#" className="btn btn-primary">Go somewhere</a>
+      <main className='container-fluid bg-light text-center'>
+        <h1>Your Cart</h1>
+        <div id="cart-items-container">
+          {renderCart()}
         </div>
-      </div>
-      </div>
-
-      <div className="bd-example bd-example-placeholder-cards d-flex justify-content-around">
-      <div className="card">
-        <svg className="bd-placeholder-img card-img-top" width="50%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-          <title>Placeholder</title>
-          <rect width="100%" height="100%" fill="#20c997"></rect>
-        </svg>
-
-
-        <div className="card-body">
-          <h5 className="card-title">Placeholder Product Name 2</h5>
-          <p className="card-text">Placeholder explanation or discription about a product.</p>
-          <a href="#" className="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      </div>
-
-      <div className="bd-example bd-example-placeholder-cards d-flex justify-content-around">
-        <div className="card">
-        <svg className="bd-placeholder-img card-img-top" width="50%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-          <title>Placeholder</title>
-          <rect width="100%" height="100%" fill="#89CFF0"></rect>
-        </svg>
-
-
-        <div className="card-body">
-          <h5 className="card-title">Placeholder Product Name 3</h5>
-          <p className="card-text">Placeholder explanation or discription about a product.</p>
-          <a href="#" className="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      </div>
-
-      <hr />
-        </main>
-    )
+        <hr />
+      </main>
+    );
 }

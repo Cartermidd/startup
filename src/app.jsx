@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
@@ -6,9 +6,33 @@ import { Home } from './home/home';
 import { Cart } from './cart/cart';
 import { Checkout } from './checkout/checkout';
 import { Products } from './products/products';
+import { useState } from 'react';
 
-
+  
 export default function App() {
+  // if item is not in cart array and button is pressed, add item to cart and change button color to red
+  // if item is in cart array and button is pressed, remove item from cart and change button color to green
+  const [cartItems, setCartItems] = useState(() => {
+      const saved = localStorage.getItem('cartItems');
+      return saved ? JSON.parse(saved) : []; 
+    });
+
+  const handleToggleCart = (productId) => {
+    setCartItems(prev => 
+      prev.includes(productId) //if item is already in cart
+        ? prev.filter(id => id !== productId) //filter it out (remove)
+        : [...prev, productId] //else add it (add)
+    )};
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    } catch {
+      // localStorage error
+    }
+  }, [cartItems]);
+
+
     return (
         <BrowserRouter>
         <div className='app bg-light text-dark'>
@@ -45,9 +69,9 @@ export default function App() {
     
     <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/products' element={<Products />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='/checkout' element={<Checkout />} />
+        <Route path='/products' element={<Products cartItems={cartItems} onToggleCart={handleToggleCart} />} />
+        <Route path='/cart' element={<Cart cartItems={cartItems} onToggleCart={handleToggleCart}/>} />
+        <Route path='/checkout' element={<Checkout cartItems={cartItems} onToggleCart={handleToggleCart}/>} />
         <Route path='*' element={<NotFound />} />
     </Routes>
     

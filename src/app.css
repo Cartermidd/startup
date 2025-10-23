@@ -166,6 +166,17 @@ button {
     border-radius: 5px;
   }
 
+#cart-items-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #4b6f81a2;
+    border-radius: 5px;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 30px;
+}
+
 .product-box {
     background-color: #ffffff;
     border-radius: 5px;
@@ -190,8 +201,20 @@ button {
     align-items: flex-start;
 }
 
+#cart-n-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
 .add-remove-cart-button {
     align-items: center;
     display: flex;
     justify-content: flex-end;
+}
+
+#Custom-Design-Requests {
+    background-color: #ffffffc7;
+    border-radius: 5px;
 }
