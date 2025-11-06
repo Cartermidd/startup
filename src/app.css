@@ -17,6 +17,7 @@ header{
     margin-bottom: 10px;
 }
 
+
 main {
   flex: 1 calc(100vh - 110px);
   display: flex;
@@ -130,8 +131,8 @@ footer a {
     padding: 5px;
     margin-left: 20px;
     text-align: center;
-
 }
+
 
 button {
     margin-right: 5px;
@@ -231,4 +232,10 @@ button {
 #shipping-info {
     margin-top: 20px;
     padding: 10px;
+}
+
+
+#login-container2 {
+  display: grid;
+  place-items: center;
 }
