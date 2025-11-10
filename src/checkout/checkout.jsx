@@ -60,8 +60,7 @@ export function Checkout({ cartItems = [], onToggleCart = () => {}, userName = '
         userName = 'Guest';
     }
 
-    // Prefer explicit authState as the source of truth. If it's not provided, fall back to username check.
-    const isAuthenticated = authState
+     const isAuthenticated = authState
         ? authState === AuthState.Authenticated
         : (userName && userName !== 'Guest');
 

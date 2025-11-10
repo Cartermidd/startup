@@ -1,110 +1,52 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
-const bcrypt = require('bcrypt');
-const { v4: uuidv4 } = require('uuid');
+// use bcryptjs to avoid native build issues across platforms
+const bcrypt = require('bcryptjs');
 const app = express();
 
-const path = require('path');
+// allow passing port as first CLI arg: `node index.js 3000`
+const port = process.argv[2] ? Number(process.argv[2]) : 4000;
 
-const authCookieName = 'token';
-let users = []; // in-memory user store for demo
-
-const port = process.argv.length > 2 ? Number(process.argv[2]) : 3000;
-
+// Middleware
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static('public'));
 
-const apiRouter = express.Router();
-app.use('/api', apiRouter);
+const users = new Map();
 
-function setAuthCookie(res, token) {
-    res.cookie(authCookieName, token, {
-        maxAge: 7 * 24 * 60 * 60 * 1000,
-        httpOnly: true,
-        sameSite: 'lax',
-    });
-}
+app.post('/api/auth/create', (req, res) => {
+    const { username, password } = req.body || {};
+    if (!username || !password) return res.status(400).json({ msg: 'username and password required' });
+    if (users.has(username)) return res.status(400).json({ msg: 'User already exists' });
 
-async function createUser(email, password) {
-    const passwordHash = await bcrypt.hash(password, 10);
-    const user = { email, password: passwordHash, token: null };
-    users.push(user);
-    return user;
-}
-
-async function findUserBy(field, value) {
-    return users.find(u => u[field] === value) || null;
-}
-
-apiRouter.post('/auth/create', async (req, res) => {
     try {
-        const { email, password } = req.body;
-        if (!email || !password) return res.status(400).send({ msg: 'Missing email or password' });
-        const existing = await findUserBy('email', email);
-        if (existing) return res.status(409).send({ msg: 'User already exists' });
-        const user = await createUser(email, password);
-        user.token = uuidv4();
-        setAuthCookie(res, user.token);
-        res.send({ email: user.email });
+        const hashedPassword = bcrypt.hashSync(password, 10);
+        users.set(username, hashedPassword);
+        return res.status(200).json({ msg: 'User created successfully' });
     } catch (err) {
-        res.status(500).send({ msg: err.message });
+        console.error('Error creating user', err);
+        return res.status(500).json({ msg: 'Internal error' });
     }
 });
 
-apiRouter.post('/auth/login', async (req, res) => {
-    try {
-        const { email, password } = req.body;
-        if (!email || !password) return res.status(400).send({ msg: 'Missing email or password' });
-        const user = await findUserBy('email', email);
-        if (!user) return res.status(401).send({ msg: 'Invalid email or password' });
-        const ok = await bcrypt.compare(password, user.password);
-        if (!ok) return res.status(401).send({ msg: 'Invalid email or password' });
-        user.token = uuidv4();
-        setAuthCookie(res, user.token);
-        res.send({ email: user.email });
-    } catch (err) {
-        res.status(500).send({ msg: err.message });
-    }
+app.post('/api/auth/login', (req, res) => {
+    const { username, password } = req.body || {};
+    if (!username || !password) return res.status(400).json({ msg: 'username and password required' });
+
+    const hashedPassword = users.get(username);
+    if (!hashedPassword) return res.status(401).json({ msg: 'User not found' });
+
+    const match = bcrypt.compareSync(password, hashedPassword);
+    if (!match) return res.status(401).json({ msg: 'Invalid password' });
+
+    // set a simple cookie for demo purposes
+    res.cookie('user', username, { httpOnly: true });
+    return res.status(200).json({ msg: 'Login successful', username });
 });
 
-apiRouter.delete('/auth/logout', async (req, res) => {
-    try {
-        const token = req.cookies[authCookieName];
-        const user = await findUserBy('token', token);
-        if (user) delete user.token;
-        res.clearCookie(authCookieName);
-        res.status(204).end();
-    } catch (err) {
-        res.status(500).send({ msg: err.message });
-    }
+app.delete('/api/auth/logout', (req, res) => {
+    res.clearCookie('user');
+    return res.status(200).json({ msg: 'Logged out' });
 });
 
-// shipping
-apiRouter.get('/shipping', (_req, res) => {
-    res.send({
-        addressRequired: false,
-        options: [
-            { id: 'standard', label: 'Standard (5-7 days)', cost: 5.0, estDays: 6 },
-            { id: 'expedited', label: 'Expedited (2-3 days)', cost: 12.0, estDays: 2.5 },
-            { id: 'overnight', label: 'Overnight (1 day)', cost: 25.0, estDays: 1 }
-        ],
-        currency: 'USD'
-    });
-});
-
-// default error handler
-app.use(function (err, _req, res, _next) {
-    console.error(err);
-    res.status(500).send({ type: err.name, message: err.message });
-});
-
-app.use(express.static(path.join(__dirname, '../public')));
-
-app.use((_req, res) => {
-    res.sendFile(path.join(__dirname, '../index.html'));
-});
-
-app.listen(port, () => {
-    console.log(`Service is running on port ${port}`);
-});
+app.listen(port, () => console.log(`Service running on port ${port}`));
