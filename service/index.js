@@ -9,7 +9,8 @@ const authCookieName = 'token';
 
 // users (I don't know what scores could be on my webpage)
 let users = [];
-let scores = [];
+
+const port = process.argv.length > 2 ? process.argv[2] : 3000;
 
 app.use(express.json());
 
@@ -24,7 +25,7 @@ apiRouter.post('/auth/create', async (req, res) => {
     if (await findUser('email', req.body.email)) {
         res.status(409).send({ msg: 'User already exists' })
     } else {
-        const user = await createServerModuleRunner(req.body.mail, req.body.password);
+        const user = await createUser(req.body.email, req.body.password);
 
         setAuthCookie(res, user.token);
         res.send({ email: user.email });
@@ -50,7 +51,7 @@ apiRouter.delete('/auth/logout', async (req, res) => {
     if (user) {
         delete user.token;
     }
-    res.clearCookier(authCookieName);
+    res.clearCookie(authCookieName);
     res.status(204).end();
 });
 
