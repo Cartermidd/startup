@@ -10,21 +10,22 @@ export function Authenticated(props) {
 
   function logout() {
     fetch(`/api/auth/logout`, {
-      method: `delete`,
+      method: 'delete',
     })
       .catch(() => {
+        // Logout failed. Assuming offline
       })
       .finally(() => {
         localStorage.removeItem('userName');
         props.onLogout();
       });
-    }
+  }
 
   return (
     <div>
       <div className='playerName'>{props.userName}</div>
-      <Button variant='primary' onClick={() => navigate('/products')}>
-        Shop
+      <Button variant='primary' onClick={() => navigate('/play')}>
+        Play
       </Button>
       <Button variant='secondary' onClick={() => logout()}>
         Logout
