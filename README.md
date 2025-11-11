@@ -110,12 +110,12 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Node.js/Express HTTP service** - I did not complete this part of the deliverable.
-- [ ] **Static middleware for frontend** - I did not complete this part of the deliverable.
-- [ ] **Calls to third party endpoints** - I did not complete this part of the deliverable.
-- [ ] **Backend service endpoints** - I did not complete this part of the deliverable.
-- [ ] **Frontend calls service endpoints** - I did not complete this part of the deliverable.
-- [ ] **Supports registration, login, logout, and restricted endpoint** - I did not complete this part of the deliverable.
+- [x] **Node.js/Express HTTP service** - Getting node to work was a challenge, but I finally got it up and running with my website.
+- [x] **Static middleware for frontend** - Middleware is in and working.
+- [x] **Calls to third party endpoints** - I decided that it would be easier to handle shipping in my own backend so I added in a weather API in the checkout page, mostly just to include something.
+- [x] **Backend service endpoints** - My backend now stores and uses user data.
+- [x] **Frontend calls service endpoints** - Frontend now makes backend calls.
+- [x] **Supports registration, login, logout, and restricted endpoint** - Login functionallity is now in.
 
 
 ## 🚀 DB deliverable
