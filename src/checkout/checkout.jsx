@@ -116,7 +116,7 @@ export function Checkout({ cartItems = [], onToggleCart = () => {}, userName = '
                                             Add to Cart
                                         </button>
                                     </div>
-                                    <h4 id="checkout-price">{`$${randomItem.price ?? 10}`}</h4>
+                                    <h4 id="checkout-price">{`$${ (randomItem.price ?? 10).toFixed(2) }`}</h4>
                                 </div>
                             )}
                             
@@ -125,7 +125,7 @@ export function Checkout({ cartItems = [], onToggleCart = () => {}, userName = '
                     ) : (
                         <section className="pay-shipping-box">
                             <div id="price-n-pay-box">
-                                <h2 id="total-price">Total Price: ${total}</h2>
+                                <h2 id="total-price">Total Price: ${total.toFixed(2)}</h2>
                                 <button
                                     onClick={() => purchase()}
                                     type="submit"

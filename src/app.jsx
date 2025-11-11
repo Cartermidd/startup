@@ -10,6 +10,8 @@ import { Checkout } from './checkout/checkout';
 import { Products } from './products/products';
 import { Login } from './login/login';
 import { AuthState } from './login/authState';
+import productData from './products/productData';
+
 
 export default function App() {
   const [userName, setUserName] = useState(localStorage.getItem('userName') || '');
@@ -138,6 +140,8 @@ export default function App() {
                 userName={userName}
                 authState={authState}
                 onAuthChange={handleAuthChange}
+                onToggleCart={handleToggleCart}
+                cartItems={cartItems}
               />
             }
           />
@@ -158,10 +162,36 @@ export default function App() {
 }
 
 
-function DisplayLogin({ userName, authState, onAuthChange }) {
+function DisplayLogin({ userName, authState, onAuthChange, onToggleCart, cartItems }) {
+  const [featuredItem] = useState( () => productData[Math.floor(Math.random() * productData.length)]);
+  const inCart = cartItems.includes(featuredItem.id);
   return (
     <main className="container-fluid bg-light text-center">
-      <p>Log in to access checkout</p>
+      <h1>Log in to access checkout</h1>
+
+      <h3>or browse our other products!</h3>
+      <NavLink className="btn btn-primary" to="/products">Products</NavLink>
+
+      <h3>Or add this featured item to your cart!</h3>
+      
+      <section className="featured-item-box">
+      <div key={featuredItem.id} className="product-box">
+        <img src={featuredItem.image} alt={featuredItem.name} className="product-img" />
+        <div>
+            <h2>{featuredItem.name}</h2>
+            <p>{featuredItem.description}</p>
+        </div>
+        <div className="product-actions">
+          <button
+            onClick={() => onToggleCart(featuredItem.id)}
+            className={`btn ${ inCart ? 'btn-danger' : 'btn-success'} btn-sm`}
+          >
+            <img src="/shopping-cart.png" width="25" alt="Cart Icon" />
+          </button>
+          </div>
+          <h4 id="checkout-price">{`$${featuredItem.price ?? 10}`}</h4>
+        </div>
+      </section>
     </main>
   );
 }
