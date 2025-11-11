@@ -17,7 +17,9 @@ async function createUser() {
 }
 
 async function loginOrCreate(endpoint) {
+  try{
   const response = await fetch(endpoint, {
+    credentials: 'include',
     method: 'post',
     body: JSON.stringify({ email: userName, password: password }),
     headers: {
@@ -30,19 +32,19 @@ async function loginOrCreate(endpoint) {
   } else {
     const body = await response.json();
     setDisplayError(`⚠ Error: ${body.msg}`);
-  }
+  }} catch (e) {
+    setDisplayError(`⚠ Error: ${e.message}`);
+}
 }
 
   return (
     <>
       <div>
         <div className='input-group mb-3'>
-          <span className='input-group-text'>@</span>
-          <input className='form-control' type='text' value={userName} onChange={(e) => setUserName(e.target.value)} placeholder='your@email.com' />
+          <input className='form-control' type='text' value={userName} onChange={(e) => setUserName(e.target.value)} placeholder='Username' />
         </div>
         <div className='input-group mb-3'>
-          <span className='input-group-text'>🔒</span>
-          <input className='form-control' type='password' onChange={(e) => setPassword(e.target.value)} placeholder='password' />
+          <input className='form-control' type='password' onChange={(e) => setPassword(e.target.value)} placeholder='Password' />
         </div>
         <Button variant='primary' onClick={() => loginUser()} disabled={!userName || !password}>
           Login

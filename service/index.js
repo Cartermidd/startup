@@ -72,14 +72,16 @@ app.use((_req, res) => {
     res.sendFile('index.html', { root: 'public' });
 });
 
-async function createUser(email, password) {
+async function createUser(username, password) {
     const passwordHash = await bcrypt.hash(password, 10);
+
     const user = {
-        email: email,
+        email: username,
         password: passwordHash,
         token: uuid.v4(),
     };
     users.push(user);
+
     return user;
 }
 
