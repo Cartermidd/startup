@@ -4,9 +4,38 @@ import productData from '../products/productData';
 import { AuthState } from '../login/authState';
 
 
+export function WeatherInfo({ city = 'Salt Lake City' }) {
+    const [weather, setWeather] = useState(null);
+
+    useEffect(() => {
+        fetch(`https://wttr.in/${city}?format=j1`)
+            .then(res => res.json())
+            .then(data => { 
+                const current = data.current_condition[0];
+                setWeather({
+                    temp: current.temp_F,
+                    condition: current.weatherDesc[0].value,
+                    feelsLike: current.FeelsLikeF
+                });
+            })
+            .catch(err => console.error('Error fetching weather data:', err));
+    }, [city]);
+
+    if (!weather) return <p>Loading weather data...</p>;
+
+    return (
+        <div>
+            <h4>Weather near {city}</h4>
+            <p>Temperature: {weather.temp}°F (Feels like {weather.feelsLike}°F)</p>
+            <p>Condition: {weather.condition}</p>
+        </div>
+        );
+}
+
+
 export function ShippingInfo({ shipping }) {
     if (!shipping) {
-        return <div>Loading shipping options...</div>;
+        return <div>Loading shipping options...</div>
     }
     return (
         <div>
@@ -140,6 +169,10 @@ export function Checkout({ cartItems = [], onToggleCart = () => {}, userName = '
                             <div id="shipping-info">
                                 <h2>API shipping information</h2>
                                 <ShippingInfo shipping={shipping} />
+                            </div>
+                            <div id="weather-info">
+                                <h2>Current Weather Information</h2>
+                                <WeatherInfo city="Salt Lake City" />
                             </div>
                         </section>
                     )}
