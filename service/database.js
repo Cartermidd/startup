@@ -5,7 +5,7 @@ const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostna
 const client = new MongoClient(url);
 const db = client.db('rockcanyon');
 const userCollection = db.collection('users');
-//const cartCollection = db.collection('cart');
+const productCollection = db.collection('products');
 
 // This will asynchronously test the connection and exit the process if it fails
 (async function testConnection() {
@@ -34,9 +34,18 @@ async function updateUser(user) {
   await userCollection.updateOne({ email: user.email }, { $set: user });
 }
 
-// async function addCart(Cart) {
-//   return cartCollection.insertOne(cart);
-// }
+
+function getProducts() {
+}
+
+async function removeProduct(productId) {
+    await productCollection.deleteOne({ productId });
+}
+
+async function addProduct(product) {
+    await productCollection.insertOne(product);
+}
+
 
 
 module.exports = {
@@ -44,6 +53,9 @@ module.exports = {
   getUserByToken,
   addUser,
   updateUser,
+  getProducts,
+  removeProduct,
+  addProduct,
 //   addScore,
 //   getHighScores,
 };
