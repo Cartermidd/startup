@@ -8,7 +8,7 @@ export function Products({ cartItems, onToggleCart }) {
   const otherProducts = productData.filter(product => product.category === 'Other');
 
 
-  const renderPrdoductSection = (title, products, sectionId) => (
+  const renderProductSection = (title, products, sectionId) => (
     <div id={sectionId} className="container-fluid product-type">
       <h2>{title}</h2>
       <div className='product-type-box'>
@@ -61,10 +61,10 @@ export function Products({ cartItems, onToggleCart }) {
       </nav>
 
 
-      {renderPrdoductSection('Wooden Products', woodenProducts, 'Wooden-Products')}
-      {renderPrdoductSection('Acrylic Products', acrylicProducts, 'Acrylic-Products')}
-      {renderPrdoductSection('Giftcard Holder Products', giftcardHolderProducts, 'Giftcard-Holder-Products')}
-      {renderPrdoductSection('Other Products', otherProducts, 'Other-Products')}
+      {renderProductSection('Wooden Products', woodenProducts, 'Wooden-Products')}
+      {renderProductSection('Acrylic Products', acrylicProducts, 'Acrylic-Products')}
+      {renderProductSection('Giftcard Holder Products', giftcardHolderProducts, 'Giftcard-Holder-Products')}
+      {renderProductSection('Other Products', otherProducts, 'Other-Products')}
 
         <div id="Custom-Design-Requests" className="product-type">
           <h2>Custom Design Requests</h2>
