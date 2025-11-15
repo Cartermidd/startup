@@ -113,7 +113,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [x] **Node.js/Express HTTP service** - Getting node to work was a challenge, but I finally got it up and running with my website.
 - [x] **Static middleware for frontend** - Middleware is in and working.
 - [x] **Calls to third party endpoints** - I decided that it would be easier to handle shipping in my own backend so I added in a weather API in the checkout page, mostly just to include something.
-- [x] **Backend service endpoints** - My backend now stores and uses user data.
+- [x] **Backend service endpoints** - My backend now stores and uses user data. Now there is also an end point for submitting new products.
 - [x] **Frontend calls service endpoints** - Frontend now makes backend calls.
 - [x] **Supports registration, login, logout, and restricted endpoint** - Login functionallity is now in.
 
@@ -122,7 +122,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Stores data in MongoDB** - I did not complete this part of the deliverable.
+- [x] **Stores data in MongoDB** - This will store new products submitted from the front end of the website. If you log in as admin, a new page will appear and you can submit products that will dynamically display in the products tab.
 - [x] **Stores credentials in MongoDB** - Login functionality now stores and retrieves user credentials in MongoDB.
 
 ## 🚀 WebSocket deliverable
