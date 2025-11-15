@@ -118,7 +118,7 @@ apiRouter.post('/admin/products', async(req,res) => {
     try {
 
         const catproducts = await DB.getProductsByCategory(category);
-        const productNum = length(catproducts) + 2;
+        const productNum = catproducts.length + 2;
         const productId = `${category}-${productNum}`;
 
     const newProduct = {

@@ -7,7 +7,7 @@ export function Admin() {
         name: '',
         description: '',
         price: '',
-        category: 'Wooden',
+        category: 'wooden',
     });
     function update(field){
         return (e) => setForm((f) => ({...f, [field]: e.target.value}));
@@ -65,7 +65,7 @@ export function Admin() {
             <p>Product type:</p>
             <label htmlFor="cat-wooden">Wooden</label> <input type="radio" id="cat-wooden" name="category" value="wooden" checked={form.category === 'wooden'} onChange={update('category')}/> 
             <label htmlFor="cat-acrylic">Acrylic</label> <input type="radio" id="cat-acrylic" name="category" value="acrylic" checked={form.category === 'acrylic'} onChange={update('category')}/> 
-            <label htmlFor="cat-giftcard">Giftcard Holder</label> <input type="radio" id="cat-gifcard" name="category" value="giftcardholder" checked={form.category === 'giftcardholder'} onChange={update('category')}/> 
+            <label htmlFor="cat-giftcard">Giftcard Holder</label> <input type="radio" id="cat-giftcard" name="category" value="giftcardholder" checked={form.category === 'giftcardholder'} onChange={update('category')}/> 
             <label htmlFor="cat-other">Other</label> <input type="radio" id="cat-other" name="category" value="other" checked={form.category === 'other'} onChange={update('category')}/>          
             <br/>
             <input type="text" placeholder="Product Name" value={form.name} onChange={update('name')} required/><br/>

@@ -10,10 +10,10 @@ export function Products({ cartItems, onToggleCart }) {
       .catch(err => console.error('Error fetching products:', err));
   }, []);
 
-  const woodenProducts = products.filter(product => product.category === 'Wooden');
-  const acrylicProducts = products.filter(product => product.category === 'Acrylic');
-  const giftcardHolderProducts = products.filter(product => product.category === 'Giftcard Holder');
-  const otherProducts = products.filter(product => product.category === 'Other');
+  const woodenProducts = products.filter(product => product.category === 'wooden');
+  const acrylicProducts = products.filter(product => product.category === 'acrylic');
+  const giftcardHolderProducts = products.filter(product => product.category === 'giftcardholder');
+  const otherProducts = products.filter(product => product.category === 'other');
 
 
   const renderProductSection = (title, productList, sectionId) => (
