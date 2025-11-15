@@ -35,7 +35,12 @@ async function updateUser(user) {
 }
 
 
-function getProducts() {
+async function getProducts() {
+    return productCollection.find({}).toArray();
+}
+
+async function getProductByID(id) {
+    return productCollection.findOne({ id: id });
 }
 
 async function removeProduct(productId) {
@@ -46,6 +51,10 @@ async function addProduct(product) {
     await productCollection.insertOne(product);
 }
 
+async function getProductsByCategory(category) {
+    return productCollection.find({ category: category }).toArray();
+}
+
 
 
 module.exports = {
@@ -54,8 +63,8 @@ module.exports = {
   addUser,
   updateUser,
   getProducts,
+  getProductByID,
+  getProductsByCategory,
   removeProduct,
   addProduct,
-//   addScore,
-//   getHighScores,
 };

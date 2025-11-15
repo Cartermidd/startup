@@ -98,6 +98,51 @@ async function findUser(field, value) {
     return null;
 }
 
+//product fetching api
+apiRouter.get('/products', async (req, res) => {
+    try {
+        const products = await DB.getProducts();
+        res.json(products);
+    } catch (error) {
+        console.error('Error fetching products:', error);
+        res.status(500).send({ msg: 'Error fetching products' });
+    }
+});
+
+//Admin product submittion
+apiRouter.post('/admin/products', async(req,res) => {
+    const { name, description, category, price } = req.body || {};
+    if (!name || !description || !category || price == null) {
+        return res.status(400).send({ msg: 'Missing required fields' });
+    }
+    try {
+
+        const catproducts = await DB.getProductsByCategory(category);
+        const productNum = length(catproducts) + 2;
+        const productId = `${category}-${productNum}`;
+
+    const newProduct = {
+        id: productId,
+        name,
+        description,
+        category,
+        price,
+        image: "/rockcanyon_design.png"
+    };
+    
+        await DB.addProduct(newProduct);
+        return res.status(201).send({ msg: 'Product added' });
+    } catch (error) {
+        console.error('Error adding product:', error);
+        return res.status(500).send({ msg: 'Error adding product' });
+    }
+});
+
+
+
+
+
+
 function setAuthCookie(res, authToken) {
     res.cookie(authCookieName, authToken, {
         maxAge: 1000 * 60 * 60 * 24 * 365,

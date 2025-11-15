@@ -9,8 +9,8 @@ import { Cart } from './cart/cart';
 import { Checkout } from './checkout/checkout';
 import { Products } from './products/products';
 import { Login } from './login/login';
+import { Admin } from './admin/admin';
 import { AuthState } from './login/authState';
-import productData from './products/productData';
 
 
 export default function App() {
@@ -83,26 +83,33 @@ export default function App() {
                 </NavLink>
               </li>
               <li className="page-item">
-                <NavLink className="page-link" to="products">
+                <NavLink className="page-link" to="/products">
                   Products
                 </NavLink>
               </li>
               <li className="page-item">
-                <NavLink className="page-link" to="cart">
+                <NavLink className="page-link" to="/cart">
                   Cart
                 </NavLink>
               </li>
               <li className="page-item">
                 {authState === AuthState.Authenticated ? (
-                  <NavLink className="page-link" to="checkout">
+                  <NavLink className="page-link" to="/checkout">
                     Check Out
                   </NavLink>
                 ) : (
-                  <NavLink className="page-link" to="login">
+                  <NavLink className="page-link" to="/login">
                     Login
                   </NavLink>
                 )}
               </li>
+              {userName === 'admin' && (
+                <li className="page-item">
+                  <NavLink className="page-link" to="/admin">
+                    ADMIN PAGE
+                  </NavLink>
+                </li>
+              )}
             </ul>
           </nav>
         </header>
@@ -145,7 +152,17 @@ export default function App() {
               />
             }
           />
+
+          <Route
+            path="/admin"
+            element={authState === AuthState.Authenticated && userName === 'admin'
+              ?<Admin authState={authState}/>
+              : <NotFound />
+            }
+          />
+      
           <Route path="*" element={<NotFound />} />
+
         </Routes>
 
         <footer>
@@ -163,8 +180,33 @@ export default function App() {
 
 
 function DisplayLogin({ userName, authState, onAuthChange, onToggleCart, cartItems }) {
-  const [featuredItem] = useState( () => productData[Math.floor(Math.random() * productData.length)]);
+  const [featuredItem, setFeaturedItem] = useState(null);
+
+  useEffect(() => {
+    fetch('/api/products')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.length > 0) {
+          const randomIndex = Math.floor(Math.random() * data.length);
+          setFeaturedItem(data[randomIndex]);
+        }
+      })
+      .catch(err => console.error('Error fetching products for featured item:', err));
+  }, []);
+
+  if (!featuredItem) {
+    return (
+      <main className="container-fluid bg-light text-center">
+        <h1>Log in to access checkout</h1>
+        <h3>or browse our other products!</h3>
+        <NavLink className="btn btn-primary" to="/products">Products</NavLink>
+      </main>
+    );
+  }
+
   const inCart = cartItems.includes(featuredItem.id);
+
+
   return (
     <main className="container-fluid bg-light text-center">
       <h1>Log in to access checkout</h1>
