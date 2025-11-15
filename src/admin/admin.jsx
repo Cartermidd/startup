@@ -42,7 +42,7 @@ export function Admin() {
                 name: '',
                 description: '',
                 price: '',
-                category: 'Wooden',
+                category: 'wooden',
             });
         } catch (err) {
             alert(`Error submitting product: ${err.message}`);
@@ -57,27 +57,24 @@ export function Admin() {
             <h1>Admin Access Panel</h1>
             <p>Hi mom!</p>
         </div>
-        <div>
+        <div id="new-product-form">
         <h2>Submit new product</h2>
         <p>This form will submit a new product to the database and will automatically start showing up!</p>
         
         <form onSubmit={handleSubmit} className="admin-form">
-            <div id="product-type-selection">
             <p>Product type:</p>
-            <input type="radio" id="cat-wooden" name="category" value="Wooden" checked={form.category === 'wooden'} onChange={update('category')}/> <label htmlFor="cat-wooden">Wooden</label>
-            <input type="radio" id="cat-acrylic" name="category" value="Acrylic" checked={form.category === 'acrylic'} onChange={update('category')}/> <label htmlFor="cat-acrylic">Acrylic</label>
-            <input type="radio" id="cat-gifcard" name="category" value="Giftcard Holder" checked={form.category === 'giftcardholder'} onChange={update('category')}/> <label htmlFor="cat-giftcard">Giftcard Holder</label>
-            <input type="radio" id="cat-other" name="category" value="Other" checked={form.category === 'other'} onChange={update('category')}/> <label htmlFor="cat-other">Other</label>
-            </div>
-
+            <label htmlFor="cat-wooden">Wooden</label> <input type="radio" id="cat-wooden" name="category" value="wooden" checked={form.category === 'wooden'} onChange={update('category')}/> 
+            <label htmlFor="cat-acrylic">Acrylic</label> <input type="radio" id="cat-acrylic" name="category" value="acrylic" checked={form.category === 'acrylic'} onChange={update('category')}/> 
+            <label htmlFor="cat-giftcard">Giftcard Holder</label> <input type="radio" id="cat-gifcard" name="category" value="giftcardholder" checked={form.category === 'giftcardholder'} onChange={update('category')}/> 
+            <label htmlFor="cat-other">Other</label> <input type="radio" id="cat-other" name="category" value="other" checked={form.category === 'other'} onChange={update('category')}/>          
             <br/>
             <input type="text" placeholder="Product Name" value={form.name} onChange={update('name')} required/><br/>
             <label htmlFor="details">Design Description:</label><br />
-            <textarea id="details" rows="4" cols="50" value={form.description} onChange={update('description')} required></textarea><br />
+            <textarea id="details" rows="2" cols="30" value={form.description} onChange={update('description')} required></textarea><br />
             <input type="number" placeholder="Price" value={form.price} onChange={update('price')} min="0" step="0.01" required/><br/>
        
 
-
+            <br/>
             <button type="submit" className="btn btn-primary btn-sm">Submit Product</button>
         </form>
         </div>
