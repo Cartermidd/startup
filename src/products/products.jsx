@@ -1,19 +1,29 @@
-import React from 'react';
-import productData from './productData';
+import React, { useEffect } from 'react';
 
 export function Products({ cartItems, onToggleCart }) {
-  const woodenProducts = productData.filter(product => product.category === 'Wooden');
-  const acrylicProducts = productData.filter(product => product.category === 'Acrylic');
-  const giftcardHolderProducts = productData.filter(product => product.category === 'Giftcard Holder');
-  const otherProducts = productData.filter(product => product.category === 'Other');
+  const [products, setProducts] = React.useState([]);
+
+  useEffect(() => {
+    fetch('/api/products')
+      .then(res => res.json())
+      .then(data => setProducts(data))
+      .catch(err => console.error('Error fetching products:', err));
+  }, []);
+
+  const woodenProducts = products.filter(product => product.category === 'Wooden');
+  const acrylicProducts = products.filter(product => product.category === 'Acrylic');
+  const giftcardHolderProducts = products.filter(product => product.category === 'Giftcard Holder');
+  const otherProducts = products.filter(product => product.category === 'Other');
 
 
-  const renderProductSection = (title, products, sectionId) => (
+  const renderProductSection = (title, productList, sectionId) => (
     <div id={sectionId} className="container-fluid product-type">
       <h2>{title}</h2>
       <div className='product-type-box'>
-        {products.map(product => (
-        <div key={product.id} className="product-box">
+        {productList.map(product => {
+          const productId = product.id;
+          return (
+        <div key={productId} className="product-box">
         <img
           className="product-img"
           src={product.image}
@@ -25,16 +35,17 @@ export function Products({ cartItems, onToggleCart }) {
         </div>
         <div id="cart-n-price">
         <button
-          onClick={() => onToggleCart(product.id)}
-          className={`btn ${ cartItems.includes(product.id) ? 'btn-danger' : 'btn-success'} btn-bg`}
+          onClick={() => onToggleCart(productId)}
+          className={`btn ${ cartItems.includes(productId) ? 'btn-danger' : 'btn-success'} btn-bg`}
         >
-          {cartItems.includes(product.id) ? 'In Cart' : 'Add to Cart'}
+          {cartItems.includes(productId) ? 'In Cart' : 'Add to Cart'}
           <img src="/shopping-cart.png" width="25" alt="Cart Icon" />
         </button>
         <p>Price: ${product.price}</p>
         </div>
       </div>
-    ))}
+        );
+      })}
     </div>
     </div>
   );

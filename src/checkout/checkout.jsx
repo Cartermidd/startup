@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import productData from '../products/productData';
 import { AuthState } from '../login/authState';
 
 
@@ -58,9 +57,15 @@ export function purchase()  {
 
 
 export function Checkout({ cartItems = [], onToggleCart = () => {}, userName = 'Guest', authState = null }) {
-    const items = cartItems.map(id => productData.find(p => p.id === id)).filter(Boolean);
-
+    const [products, setProducts] = useState([]);
     const [shipping, setShipping] = useState(null);
+
+    useEffect(() => {
+        fetch('/api/products')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+            .catch(err => console.error('Error fetching products:', err));
+    }, []);
 
     useEffect(() => {
         let mounted = true;
@@ -71,6 +76,10 @@ export function Checkout({ cartItems = [], onToggleCart = () => {}, userName = '
         return () => { mounted = false; };
     }, []);
 
+    const items = cartItems
+        .map(id => products.find(p => (p.id) === id))
+        .filter(Boolean);
+
     const total = items.reduce((sum, item) => {
         const price = item.price;
         return sum + price;
@@ -78,8 +87,9 @@ export function Checkout({ cartItems = [], onToggleCart = () => {}, userName = '
 
 
     function getRandomItem(){
-        const randomIndex = Math.floor(Math.random() * productData.length);
-        return productData[randomIndex];
+        if (products.length === 0) return null;
+        const randomIndex = Math.floor(Math.random() * products.length);
+        return products[randomIndex];
     }
 
     // pick a featured random item when the cart is empty

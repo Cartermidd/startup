@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import productData from '../products/productData';
 
 export function Cart({ cartItems, onToggleCart }) {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/products')
+      .then(res => res.json())
+      .then(data => setProducts(data))
+      .catch(err => console.error('Error fetching products:', err));
+  }, []);
+
+
   const renderCart = () => {
     if (cartItems.length === 0) {
       return (
@@ -14,7 +23,7 @@ export function Cart({ cartItems, onToggleCart }) {
     }
 
     return cartItems.map(productId => {
-      const product = productData.find(p => p.id === productId);
+      const product = products.find(p => (p.id) === productId);
       if (!product) return null;
       
       return (
